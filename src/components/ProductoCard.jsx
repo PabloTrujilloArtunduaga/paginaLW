@@ -1,30 +1,41 @@
-import React, { useState } from 'react'
+import React, { useEffect } from "react";
+import M from "materialize-css";
 
-function ProductoCard({ producto }) {
-  const [open, setOpen] = useState(false)
+export default function ProductoCard({ producto }) {
+  useEffect(() => {
+    M.AutoInit();
+  }, []);
+
+  const agregarSimulado = () => {
+    M.toast({
+      html: `<strong>${producto.titulo}</strong> agregado al carrito`,
+      classes: "green darken-2",
+    });
+  };
+
   return (
-    <div className="col s12 m4">
-      <div className="card">
-        <div className="card-image">
-          <img src={producto.imagen} alt={producto.titulo} />
-          <span 
-            className="card-title white-text card-title-clickable"
-            onClick={() => setOpen(!open)}
-          >
-            {producto.titulo}
-          </span>
+    <div className="col s12 m6 l4">
+      <div className="card hoverable producto-card">
+        <div className="card-image producto-img-wrapper">
+          <img
+            src={producto.imagen}
+            alt={producto.titulo}
+            className="producto-img"
+          />
         </div>
-        <div className="card-content">
-          <p>{producto.descripcion}</p>
-          {open && (
-            <ul className="submenu show">
-              {producto.submenu.map((item, idx) => <li key={idx}>{item}</li>)}
-            </ul>
-          )}
+        <div className="card-content producto-content">
+          <h5 className="producto-titulo">{producto.titulo}</h5>
+          <p className="producto-descripcion">{producto.descripcion}</p>
+        </div>
+        <div className="card-action">
+          <button
+            className="btn amber darken-2 waves-effect waves-light producto-btn"
+            onClick={agregarSimulado}
+          >
+            Agregar 🛒
+          </button>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-export default ProductoCard
