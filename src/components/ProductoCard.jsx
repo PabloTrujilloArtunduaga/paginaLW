@@ -12,7 +12,7 @@ export default function ProductoCard({ producto }) {
   const agregarSimulado = () => {
     agregarAlCarrito(producto);
     M.toast({
-      html: `<strong>${producto.titulo}</strong> agregado al carrito`,
+      html: `<strong> ${producto.titulo} </strong> agregado al carrito`,
       classes: "green darken-2",
     });
   };
