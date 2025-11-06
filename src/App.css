@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;600;700&display=swap');
+
 :root {
-  --color-principal: #6b4f4f;        
-  --color-secundario: #f5f1e9;       
-  --color-acento: #d4af37;          
-  --color-acento-hover: #c49c2f;    
-  --color-neutro: #4a4a4a;          
-  --color-footer: #4b3a3a;           
+  --color-principal: #000000;          /* Negro elegante */
+  --color-secundario: #ffffff;         /* Blanco puro */
+  --color-acento: #d4af37;             /* Dorado elegante */
+  --color-acento-hover: #c49c2f;       /* Dorado oscuro */
+  --color-neutro: #333333;             /* Gris oscuro neutro */
+  --color-footer: #0f0f0f;             /* Fondo oscuro profundo */
   --color-texto-light: #ffffff;
-  --font-base: 'Lato', sans-serif;   
+  --font-base: 'Lato', sans-serif;
 }
 
 /* GLOBAL */
@@ -22,23 +24,24 @@ section {
   padding: 80px 0;
 }
 
-/* NAVBAR PREMIUM */
+/* === NAVBAR PREMIUM === */
 nav {
-  background: linear-gradient(90deg, #4b3a3a, #6b4f4f) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  background: linear-gradient(90deg, #000000, #1a1a1a) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 nav .brand-logo {
   font-family: 'Playfair Display', serif;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 2rem;
   letter-spacing: 1px;
-  color: var(--color-texto-light) !important;
+  color: var(--color-acento) !important;
   transition: 0.3s ease;
 }
 
 nav .brand-logo:hover {
-  color: var(--color-acento) !important;
+  color: var(--color-acento-hover) !important;
 }
 
 nav ul li a {
@@ -54,16 +57,17 @@ nav ul li a:hover {
   transform: translateY(-2px);
 }
 
-/* TITULOS Y TEXTO */
+/* === TITULOS Y TEXTO === */
 h1, h2, h5 {
   text-align: center;
   font-weight: 700;
   color: var(--color-principal);
   margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
 }
 
 h1 { font-size: 2.8rem; }
-h5 { font-size: 1.7rem; color: #8b5e3c; }
+h5 { font-size: 1.7rem; color: var(--color-acento); }
 
 p {
   max-width: 850px;
@@ -73,13 +77,14 @@ p {
   color: var(--color-neutro);
 }
 
-/* BOTONES */
+/* === BOTONES === */
 .btn {
   background-color: var(--color-acento) !important;
   border-radius: 8px;
   padding: 0 28px;
   font-weight: 700;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--color-texto-light) !important;
 }
 
 .btn:hover {
@@ -88,12 +93,13 @@ p {
   transform: translateY(-3px);
 }
 
-/* CARDS */
+/* === CARDS === */
 .card {
   border-radius: 14px;
   padding: 25px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.18);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
 }
 
 .card:hover {
@@ -101,34 +107,35 @@ p {
   box-shadow: 0 14px 25px rgba(0,0,0,0.25);
 }
 
-/* CARRUSEL */
+/* === CARRUSEL === */
 .carousel .carousel-item img {
   max-height: 450px;
   width: 100%;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
-/* SECCION SOBRE NOSOTROS */
+/* === SECCIÓN SOBRE NOSOTROS === */
 #sobre-nosotros {
-  background-color: #fff8ef;
+  background-color: #f9f9f9;
   border-radius: 16px;
   padding: 60px 25px;
   box-shadow: 0 6px 25px rgba(0,0,0,0.12);
 }
 
-/* FOOTER */
+/* === FOOTER === */
 footer.page-footer {
-  background-color: var(--color-footer) !important;
+  background: linear-gradient(90deg, #000000, #1a1a1a) !important;
   color: var(--color-acento);
   font-weight: 600;
   text-align: center;
   padding: 30px 0;
   letter-spacing: 0.6px;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* LAYOUT FLEX FIX */
+/* === LAYOUT FLEX FIX === */
 html, body {
   height: 100%;
 }
@@ -141,23 +148,23 @@ html, body {
 
 .main-content { flex: 1; }
 
-/* RESPONSIVE */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
   p { font-size: 1rem; padding: 0 15px; }
   .carousel .carousel-item img { max-height: 260px; }
 }
 
-
-/* PRODUCTOS: CARDS UNIFORMES Y ELEGANTES */
+/* === PRODUCTOS === */
 .producto-card {
-  height: 420px; /* todas las cards mismas dimensiones */
+  height: 420px;
   display: flex;
   flex-direction: column;
   border-radius: 14px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  background-color: #fff;
 }
 
 .producto-card:hover {
@@ -165,11 +172,11 @@ html, body {
   box-shadow: 0 14px 25px rgba(0,0,0,0.25);
 }
 
-/* IMAGEN CON ZOOM */
+/* Imagen */
 .producto-img-wrapper {
   height: 230px;
   overflow: hidden;
-  border-bottom: 3px solid rgba(255,255,255,0.3);
+  border-bottom: 3px solid rgba(0,0,0,0.1);
 }
 .producto-img {
   width: 100%;
@@ -181,7 +188,7 @@ html, body {
   transform: scale(1.15);
 }
 
-/* CONTENIDO DE LA CARD */
+/* Contenido */
 .producto-content {
   padding: 15px;
   text-align: center;
@@ -201,7 +208,7 @@ html, body {
   margin-bottom: 15px;
 }
 
-/* BOTÓN AGREGAR */
+/* Botón */
 .producto-btn {
   border-radius: 8px;
   font-weight: 700;
@@ -216,7 +223,7 @@ html, body {
   transform: translateY(-3px);
 }
 
-/* TITULOS DE SECCIÓN */
+/* Títulos de sección */
 .section h4 {
   font-weight: 700;
   font-size: 2rem;

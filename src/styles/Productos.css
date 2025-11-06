@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;800&display=swap');
+
+.productos-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* === TITULOS CON ANIMACIÓN === */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 2.3rem;
+  color: var(--color-principal);
+  letter-spacing: 1.5px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--color-acento);
+  margin: 12px auto 0;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title.visible::after {
+  width: 140px;
+}
+
+/* === GRILLA DE PRODUCTOS === */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-bottom: 60px;
+  padding: 0 20px;
+  justify-items: center;
+}
+
+/* === EFECTO CORTINA DE ENTRADA === */
+.producto-card {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.producto-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.4), transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out;
+  z-index: 2;
+}
+
+.producto-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.producto-card.visible::before {
+  transform: translateX(100%);
+}
+
+/* HOVER ANIMADO */
+.producto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.25);
+}
+
+.producto-card:hover::before {
+  transform: translateX(100%);
+  background: linear-gradient(90deg, rgba(255,255,255,0.6), transparent 100%);
+}
+
+/* === TIPOGRAFÍA INTERNA === */
+.producto-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-principal);
+}
+
+.producto-descripcion {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
+  color: var(--color-neutro);
+  line-height: 1.5;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .productos-grid {
+    gap: 1.5rem;
+  }
+}

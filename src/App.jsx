@@ -12,6 +12,7 @@ import Galeria from "./pages/Galeria";
 import Nosotros from "./pages/Nosotros";
 import Contacto from "./pages/Contacto";
 import Productos from "./pages/Productos";
+import Carrito from "./pages/Carrito";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
             <Route path="/productos" element={<Productos />} />
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/carrito" element={<Carrito />} />
+
           </Routes>
         </div>
 

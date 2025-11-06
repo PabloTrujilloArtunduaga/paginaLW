@@ -1,12 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import M from "materialize-css";
+import { CarritoContext } from "../context/CarritoContext";
 
 export default function ProductoCard({ producto }) {
+  const { agregarAlCarrito } = useContext(CarritoContext);
+
   useEffect(() => {
     M.AutoInit();
   }, []);
 
   const agregarSimulado = () => {
+    agregarAlCarrito(producto);
     M.toast({
       html: `<strong>${producto.titulo}</strong> agregado al carrito`,
       classes: "green darken-2",
@@ -26,8 +30,9 @@ export default function ProductoCard({ producto }) {
         <div className="card-content producto-content">
           <h5 className="producto-titulo">{producto.titulo}</h5>
           <p className="producto-descripcion">{producto.descripcion}</p>
+          {producto.precio && <p><b>Precio:</b> ${producto.precio.toLocaleString()}</p>}
         </div>
-        <div className="card-action">
+        <div className="card-action center-align">
           <button
             className="btn amber darken-2 waves-effect waves-light producto-btn"
             onClick={agregarSimulado}
