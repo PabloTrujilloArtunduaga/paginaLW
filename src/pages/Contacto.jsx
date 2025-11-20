@@ -1,72 +1,79 @@
 import React, { useEffect } from 'react';
 import M from 'materialize-css';
+import "../styles/Contacto.css";
 
 export default function Contacto() {
 
   useEffect(() => {
+    M.AutoInit();
     M.updateTextFields();
   }, []);
 
   const enviarSimulado = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const mensaje = document.getElementById('mensaje').value;
+    const nombre = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
 
     if (!nombre || !email || !mensaje) {
-      M.toast({
-        html: 'Por favor completa todos los campos',
-        classes: 'red darken-2'
-      });
+      M.toast({ html: 'Por favor completa todos los campos', classes: 'red darken-3 rounded' });
       return;
     }
 
     M.toast({
-      html: `Gracias ${nombre}, tu mensaje ha sido enviado!`,
-      classes: 'green darken-2'
+      html: `<strong>${nombre}</strong>, tu mensaje ha sido enviado correctamente.`,
+      classes: 'green darken-2 rounded'
     });
 
     document.getElementById('nombre').value = '';
     document.getElementById('email').value = '';
     document.getElementById('mensaje').value = '';
-    M.updateTextFields(); 
+    M.updateTextFields();
   };
 
   return (
     <section className="contacto-section">
-      <div className="container">
-        <h2 className="contacto-titulo">Contáctanos</h2>
-        <p className="contacto-sub">
-          Estamos aquí para ayudarte. Escríbenos y te responderemos lo antes posible.
+      <div className="container fade-in">
+
+        <h2 className="contacto-titulo center-align">Contáctanos</h2>
+        <p className="contacto-sub center-align">
+          Tu mensaje es importante para nosotros. Te responderemos lo antes posible.
         </p>
 
-        <div className="card contacto-card">
+        <div className="card contacto-card z-depth-3">
+
           <form onSubmit={enviarSimulado}>
+
+            {/* Nombre */}
             <div className="input-field">
-              <input id="nombre" type="text" className="validate" />
-              <label htmlFor="nombre">Nombre</label>
+              <input id="nombre" type="text" className="validate elegant-input" />
+              <label htmlFor="nombre">Nombre completo</label>
             </div>
 
+            {/* Email */}
             <div className="input-field">
-              <input id="email" type="email" className="validate" />
+              <input id="email" type="email" className="validate elegant-input" />
               <label htmlFor="email">Correo electrónico</label>
             </div>
 
+            {/* Mensaje */}
             <div className="input-field">
-              <textarea id="mensaje" className="materialize-textarea"></textarea>
-              <label htmlFor="mensaje">Mensaje</label>
+              <textarea id="mensaje" className="materialize-textarea elegant-input"></textarea>
+              <label htmlFor="mensaje">Tu mensaje</label>
             </div>
 
             <div className="center">
-              <button 
+              <button
                 className="btn btn-contacto waves-effect waves-light"
                 type="submit"
               >
-                Enviar
+                Enviar Mensaje ✉️
               </button>
             </div>
+
           </form>
+
         </div>
       </div>
     </section>

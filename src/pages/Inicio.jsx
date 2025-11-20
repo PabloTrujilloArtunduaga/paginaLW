@@ -1,26 +1,65 @@
-import React, { useEffect } from 'react'
-import M from 'materialize-css'
+import React, { useEffect, useState } from "react";
+import Carrusel from "../components/Carrusel";
+import Categorias from "../components/Categorias";
+import "../styles/Inicio.css";
 
-function Inicio() {
+export default function Inicio() {
+  const [promos, setPromos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+
   useEffect(() => {
-    const elems = document.querySelectorAll('.parallax')
-    M.Parallax.init(elems)
-  }, [])
+    const cargarPromos = async () => {
+      try {
+        const res = await fetch("promocion.json");
+        const data = await res.json();
+
+        setPromos(data.promociones);
+      } catch (error) {
+        console.error("Error cargando promociones:", error);
+      } finally {
+        setCargando(false);
+      }
+    };
+
+    cargarPromos();
+  }, []);
 
   return (
-    <div className="parallax-container">
-      <div className="parallax">
-        <img src="/assets/BeerStore.jpg" alt="Hero" />
-      </div>
-      <div className="container center" style={{ marginTop: '120px' }}>
-        <h3 className="delineado white-text">Bienvenido al website de</h3>
-        <h3 className="delineado white-text">Estanco MalaCopa</h3>
-        <p className="delineado3 flow-text">
-          El sitio perfecto sin preocupaciones y una buena bebida
-        </p>
-      </div>
-    </div>
-  )
-}
+    <div>
+      <Carrusel />
+      <Categorias />
 
-export default Inicio
+      {/* SECCIÓN PROMOCIONES */}
+      <section className="inicio-section">
+        <h2 className="titulo-section">Promociones del Estanco MalaCopa</h2>
+
+        {cargando ? (
+          <p className="cargando">Cargando promociones...</p>
+        ) : (
+          <div className="promos-grid">
+            {promos.map((p) => (
+              <div key={p.id} className="promo-card">
+                <span className="descuento">-{p.descuento}%</span>
+
+                <div className="promo-img">
+                  <img src={p.imagen} alt={p.titulo} />
+                </div>
+
+                <h3 className="promo-nombre">{p.titulo}</h3>
+
+                <div className="promo-precios">
+                  <span className="promo-precio-actual">
+                    ${p.precioPromo.toLocaleString()}
+                  </span>
+                  <span className="promo-precio-ant">
+                    ${p.precioAnterior.toLocaleString()}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+    </div>
+  );
+}
