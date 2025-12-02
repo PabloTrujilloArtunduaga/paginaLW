@@ -1,4 +1,4 @@
-/* ===== CONTENEDOR PRINCIPAL ===== */
+/* Contenedor principal */
 .carrusel-container {
   position: relative;
   width: 100%;
@@ -17,7 +17,7 @@
   }
 }
 
-/* ===== SLIDE ===== */
+/* Slide */
 .slide {
   position: relative;
   width: 100%;
@@ -32,7 +32,7 @@
   display: block;
 }
 
-/* ===== CAPA OSCURA ===== */
+/* Capa Oscura */
 .capa {
   position: absolute;
   inset: 0;
@@ -40,7 +40,7 @@
   z-index: 1;
 }
 
-/* ===== TEXTO CENTRAL ===== */
+/* Texto central */
 .texto-principal {
   position: absolute;
   inset: 0;
@@ -96,7 +96,7 @@
   color: #111;
 }
 
-/* ===== FLECHAS ===== */
+/* Flechas */
 .carrusel-btn {
   position: absolute;
   top: 50%;
@@ -119,7 +119,7 @@
 .carrusel-btn.izquierda { left: 15px; }
 .carrusel-btn.derecha { right: 15px; }
 
-/* ===== DOTS ===== */
+/* Dots */
 .dots {
   position: absolute;
   left: 50%;

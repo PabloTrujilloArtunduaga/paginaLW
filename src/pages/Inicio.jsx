@@ -34,7 +34,7 @@ export default function Inicio() {
         <h2 className="titulo-section">Promociones del Estanco MalaCopa</h2>
 
         {cargando ? (
-          <p className="cargando">Cargando promociones...</p>
+          <p className="cargando">Cargando promociones</p>
         ) : (
           <div className="promos-grid">
             {promos.map((p) => (

@@ -20,7 +20,7 @@
   margin: 0 auto 50px auto;
 }
 
-/* === GRID === */
+/* Grid */
 .categorias-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -28,7 +28,7 @@
   justify-items: center;
 }
 
-/* === TARJETAS === */
+/* Tarjetas */
 .categoria-card {
   position: relative;
   overflow: hidden;
@@ -58,7 +58,7 @@
   filter: brightness(75%);
 }
 
-/* === TEXTO SOBRE IMAGEN === */
+/* Texto sobre la imagen */
 .categoria-titulo {
   position: absolute;
   bottom: 18px;

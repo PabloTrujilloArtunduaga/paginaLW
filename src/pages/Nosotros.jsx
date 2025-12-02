@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Nosotros() {
   return (
-    <div style={{ backgroundColor: "#f8f5f0", padding: "80px 0" }}>
+    <div style={{ backgroundColor: "#fafafa", padding: "80px 0" }}>
       <div className="container" style={{ maxWidth: "900px" }}>
 
         {/* TÍTULO PRINCIPAL */}
@@ -13,7 +13,7 @@ export default function Nosotros() {
             fontSize: "3rem",
             fontWeight: "600",
             marginBottom: "60px",
-            color: "#3d2f2f",
+            color: "#b8860b",
           }}
         >
           Sobre Nosotros
@@ -75,14 +75,13 @@ export default function Nosotros() {
   )
 }
 
-
-/* --- ESTILOS ELEGANTES --- */
+// Estilos en línea
 
 const cardStyle = {
   borderRadius: "14px",
   padding: "5px",
   marginBottom: "40px",
-  backgroundColor: "#ffffff",
+  backgroundColor: "#fafafa",
 }
 
 const cardTitleStyle = {

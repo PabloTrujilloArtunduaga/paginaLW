@@ -25,13 +25,13 @@ export default function Footer() {
 
         {/* Redes sociales */}
         <div className="footer-social">
-          <a href="#" className="footer-icon tooltip" data-tooltip="Facebook">
+          <a href="/" className="footer-icon tooltip" data-tooltip="Facebook">
             <i className="material-icons">f</i>
           </a>
-          <a href="#" className="footer-icon tooltip" data-tooltip="Correo">
+          <a href="/" className="footer-icon tooltip" data-tooltip="Correo">
             <i className="material-icons">✉️</i>
           </a>
-          <a href="#" className="footer-icon tooltip" data-tooltip="Teléfono">
+          <a href="/" className="footer-icon tooltip" data-tooltip="Teléfono">
             <i className="material-icons">✆</i>
           </a>
         </div>

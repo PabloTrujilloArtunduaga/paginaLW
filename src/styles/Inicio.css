@@ -1,8 +1,8 @@
-/* ===== SECCIÓN PROMOCIONES ===== */
+/* Las promociones */
 .inicio-section {
   text-align: center;
   padding: 60px 20px;
-  background-color: #fdfbf8; /* mismo fondo que categorías */
+  background-color: #fdfbf8; 
 }
 
 .titulo-section {
@@ -21,7 +21,7 @@
   margin: 0 auto 50px auto;
 }
 
-/* ===== GRID ===== */
+/* Grid */
 .promos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -29,7 +29,7 @@
   justify-items: center; /* CENTRA TODAS LAS CARDS */
 }
 
-/* ===== TARJETA ===== */
+/* Tarjeta */
 .promo-card {
   position: relative;
   overflow: hidden;
@@ -49,7 +49,7 @@
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
-/* ===== IMAGEN ===== */
+/* Imagen */
 .promo-img {
   width: 100%;
   height: 260px;
@@ -70,7 +70,7 @@
   transform: scale(1.06);
 }
 
-/* ===== DESCUENTO ===== */
+/* Los descuentos */
 .descuento {
   position: absolute;
   top: 15px;
@@ -84,7 +84,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== TEXTO ===== */
+/* Texto */
 .promo-nombre {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
@@ -93,7 +93,7 @@
   color: #333;
 }
 
-/* ===== PRECIOS ===== */
+/* Precios  */
 .promo-precios {
   margin-bottom: 12px;
 }
@@ -111,7 +111,7 @@
   font-size: 0.9rem;
 }
 
-/* ===== BOTÓN ===== */
+/* Boton */
 .btn-ver {
   margin-top: 10px;
   padding: 10px 22px;

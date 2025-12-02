@@ -10,7 +10,7 @@ export function CarritoProvider({ children }) {
     setCarrito((prev) => {
       const existing = prev.find((p) => p.titulo === producto.titulo);
       if (existing) {
-        // Si ya existe, aumentamos cantidad
+        // Si hay prodicto, aumentamos cantidad
         return prev.map((p) =>
           p.titulo === producto.titulo
             ? { ...p, cantidad: p.cantidad + 1 }
@@ -18,7 +18,7 @@ export function CarritoProvider({ children }) {
         );
       }
       
-      // Si no existe, agregamos con cantidad 1
+      // Si no existe prodcuto, agregamos con cantidad 1
       return [...prev, { ...producto, cantidad: 1 }];
     });
 

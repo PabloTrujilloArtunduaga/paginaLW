@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Cinzel:wght@600&display=swap');
 
-/* ============================
-   CONTENEDOR GENERAL
-============================ */
+/* Contenedor */
 .contacto-section {
   padding: 80px 0;
   background: linear-gradient(to bottom, #0d0d0d, #111);
@@ -13,9 +11,7 @@
   animation: fadeIn 0.9s ease forwards;
 }
 
-/* ============================
-   TITULOS
-============================ */
+/* Los titulos */
 .contacto-titulo {
   font-family: "Cinzel", serif;
   font-size: 3rem;
@@ -33,9 +29,7 @@
   margin: 0 auto 45px;
 }
 
-/* ============================
-   CARD DE CONTACTO
-============================ */
+/* Carta de contacto */
 .contacto-card {
   padding: 45px;
   border-radius: 20px;
@@ -54,9 +48,7 @@
       inset 0 0 20px rgba(233, 201, 109, 0.10);
 }
 
-/* ============================
-   INPUTS
-============================ */
+/* Los inputs */
 .elegant-input {
   color: black !important;
   border-bottom: 1px solid #666 !important;

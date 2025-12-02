@@ -49,7 +49,7 @@ export default function Carrusel() {
   const [fade, setFade] = useState(true);
   const touchStartX = useRef(null);
 
-  // --- Cambio automático ---
+  // Cambio de forma automatica
   useEffect(() => {
     const interval = setInterval(() => nextSlide(), 8000);
     return () => clearInterval(interval);
@@ -71,7 +71,7 @@ export default function Carrusel() {
     }, 300);
   };
 
-  // --- Navegación táctil (swipe) ---
+  // Navegación tactil
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
   };

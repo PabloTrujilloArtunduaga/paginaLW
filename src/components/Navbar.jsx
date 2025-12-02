@@ -21,7 +21,7 @@ export default function Navbar() {
             <span className="logo-malacopa">MalaCopa</span>
           </Link>
 
-          {/* BOTÓN MOBILE */}
+          {/* BOTON MOBILE */}
           <a href="#" data-target="mobile-demo" className="sidenav-trigger right">
             <i className="material-icons white-text">menu</i>
           </a>
